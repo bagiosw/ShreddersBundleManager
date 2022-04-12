@@ -38,14 +38,14 @@ You can also open the UABEA through the Mod Manager. If it's the first time you 
 Coming soon!
 
 ## Building from source
-1. Prerequisites
+### 1. Prerequisites
 - [Git](https://git-scm.com)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/)
-2. Clone or Download this repo. This will create a local copy of the repo.
+### 2. Clone or Download this repo. This will create a local copy of the repo.
 ```ps
 git clone https://github.com/bagiosw/ShreddersModManager
 ```
-3. Build the project
+### 3. Build the project
 - Open the `ShreddersModManager.sln` file.
 - Debug the project.
 
