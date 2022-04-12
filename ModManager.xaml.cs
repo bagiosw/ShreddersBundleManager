@@ -35,6 +35,7 @@ namespace ShreddersModManager
             if (Properties.Settings.Default.GameDir != string.Empty)
             {
                 AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | WARNING | Game directory defined.");
+                ImportButtonMenu.IsEnabled = true;
                 ImportButton.IsEnabled = true;
                 ApplyButton.IsEnabled = true;
                 DeleteAppliedButton.IsEnabled = true;

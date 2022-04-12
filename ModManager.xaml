@@ -143,9 +143,11 @@
                   FontStyle="Normal">
                 <MenuItem Header="_Mod Manager">
                     <MenuItem Foreground="Black"
+                              x:Name="ImportButtonMenu"
                               Header="_Import Bundle"
                               Icon="{materialDesign:PackIcon Kind=PlusBoxOutline}"
-                              Click="MenuImport_Click"></MenuItem>
+                              Click="MenuImport_Click"
+                              IsEnabled="False"></MenuItem>
                     <Separator />
                     <MenuItem Foreground="Black"
                               Header="_Shredders Folder"
