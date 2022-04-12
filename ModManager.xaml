@@ -1,0 +1,327 @@
+﻿<Window x:Class="ShreddersModManager.ModManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ShreddersModManager"
+        mc:Ignorable="d"
+        Title="ModManager"
+        Height="600"
+        Width="1200"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Icon="Images\app.ico">
+    <materialDesign:Card Background="WhiteSmoke"
+                         Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                         Padding="0"
+                         UniformCornerRadius="10"
+                         Margin="5">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!--<Grid Background="DarkRed"
+                  Grid.RowSpan="2"
+                  Grid.ColumnSpan="14" />-->
+            <materialDesign:ColorZone x:Name="CustomDraggable"
+                                      Mode="PrimaryDark"
+                                      Background="#0077D0"
+                                      Padding="15,0,0,0"
+                                      CornerRadius="10,10,0,0"
+                                      materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                                      ClipToBounds="False"
+                                      Grid.ColumnSpan="14"
+                                      Grid.RowSpan="2"
+                                      Height="76"
+                                      MouseDown="CustomDraggable_MouseDown">
+                <StackPanel Orientation="Horizontal"
+                            Grid.ColumnSpan="5"
+                            VerticalAlignment="Top">
+                    <Image Source="Images\app.ico"
+                           Height="35"
+                           Width="35" />
+                    <!--<Button Style="{StaticResource MaterialDesignFlatLightButton}"
+                    ToolTip="Minimize"
+                    IsEnabled="True"
+                    Height="35"
+                    Width="35"
+                    Background="{StaticResource icon}">
+            </Button>-->
+                    <TextBlock Text="Shredders Mod Manager v1.0.0"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0"
+                               Foreground="White"
+                               FontFamily="segoe ui light"
+                               FontSize="15" />
+                </StackPanel>
+            </materialDesign:ColorZone>
+
+            <StackPanel Orientation="Horizontal"
+                        Width="140"
+                        Grid.Column="11"
+                        Grid.ColumnSpan="23"
+                        Grid.RowSpan="2"
+                        HorizontalAlignment="Right">
+                <!--<Button Style="{StaticResource MaterialDesignFlatLightButton}"
+                    ToolTip="Minimize"
+                    IsEnabled="True"
+                    Foreground="White"
+                    Height="35">
+                <materialDesign:PackIcon Kind="WindowClose" />
+            </Button>-->
+                <Button x:Name="UabeaButton"
+                        Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                        ToolTip="Open UABEA"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Background="#BFD6F6"
+                        Foreground="#BFD6F6"
+                        Margin="0,0,10,0"
+                        Click="UabeaButton_Click"
+                        materialDesign:RippleAssist.Feedback="#FFC902">
+                    <Image Source="Images\uabeavalonia.ico"
+                           Height="45" />
+                </Button>
+
+                <Button x:Name="ExitButton"
+                        Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                        ToolTip="Exit Shredders Mod Manager"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Background="#212121"
+                        Foreground="#DD1A22"
+                        Click="ExitButton_Click"
+                        materialDesign:RippleAssist.Feedback="#FF0000">
+                    <materialDesign:PackIcon Kind="Power"
+                                             Height="35"
+                                             Width="35" />
+                </Button>
+            </StackPanel>
+
+            <Menu IsMainMenu="True"
+                  Height="40"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  Background="#0077D0"
+                  Foreground="White"
+                  FontFamily="segoe ui light"
+                  FontStyle="Normal">
+                <MenuItem Header="_Mod Manager">
+                    <MenuItem Foreground="Black"
+                              Header="_Import Bundle"
+                              Icon="{materialDesign:PackIcon Kind=PlusBoxOutline}"
+                              Click="MenuImport_Click"></MenuItem>
+                    <Separator />
+                    <MenuItem Foreground="Black"
+                              Header="_Shredders Folder"
+                              Icon="{materialDesign:PackIcon Kind=Folder}"
+                              Click="MenuFolder_Click"></MenuItem>
+                    <MenuItem Foreground="Black"
+                              Header="_UABEA Folder"
+                              Icon="{materialDesign:PackIcon Kind=Folder}"
+                              Click="UabeaFolder_Click"></MenuItem>
+                    <Separator />
+                    <MenuItem Foreground="Black"
+                              Header="_Exit"
+                              Icon="{materialDesign:PackIcon Kind=ExitToApp}"
+                              Click="MenuExit_Click" />
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Foreground="Black"
+                              Header="_About"
+                              Icon="{materialDesign:PackIcon Kind=Information}"
+                              Click="MenuAbout_Click" />
+                </MenuItem>
+            </Menu>
+            <TextBlock x:Name="ShredderDirText"
+                       Text="Shredders directory not defined. Please define it from 'Mod Manager -> Shredders Folder'"
+                       Grid.Row="1"
+                       Grid.Column="3"
+                       Grid.ColumnSpan="9"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontFamily="segoe ui light"
+                       FontStyle="Normal" />
+            <TextBlock Text="Imported Bundles"
+                       Grid.Row="2"
+                       Grid.ColumnSpan="2"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontStyle="Oblique"
+                       FontWeight="Bold"
+                       FontSize="18"
+                       Foreground="Black" />
+            <TextBlock Text="Applied Bundles"
+                       Grid.Row="2"
+                       Grid.Column="7"
+                       Grid.ColumnSpan="2"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontStyle="Oblique"
+                       FontWeight="Bold"
+                       FontSize="18"
+                       Foreground="Black" />
+            <StackPanel Grid.Row="3"
+                        Grid.RowSpan="10"
+                        Grid.ColumnSpan="14">
+
+            </StackPanel>
+            <StackPanel Grid.Row="3"
+                        Grid.ColumnSpan="7"
+                        Grid.RowSpan="11"
+                        Margin="10,0,5,5">
+                <StackPanel x:Name="ImportedPanel"
+                            Margin="0,0,0,5"
+                            Background="#ededed">
+                    <ListView x:Name="ImportedList"
+                              Height="423">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name"
+                                                Width="200"
+                                                DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Directory"
+                                                Width="180"
+                                                DisplayMemberBinding="{Binding Directory}" />
+                                <GridViewColumn Header="Target"
+                                                Width="1000"
+                                                DisplayMemberBinding="{Binding TargetFile}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+                <StackPanel x:Name="LeftButtonPanel"
+                            Height="35"
+                            Orientation="Horizontal">
+                    <StackPanel x:Name="LeftButtonPanel1"
+                                Height="35"
+                                Width="430"
+                                HorizontalAlignment="Left"
+                                Orientation="Horizontal">
+                        <Button x:Name="ImportButton"
+                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                Background="#0077D0"
+                                Margin="0,0,3,0"
+                                Content="Import Bundle"
+                                Height="35"
+                                Width="125"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Click="ImportButton_Click"
+                                IsEnabled="False"
+                                materialDesign:ButtonAssist.CornerRadius="15" />
+                        <Button x:Name="DeleteButton"
+                                Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                Margin="0,0,3,0"
+                                Content="Delete Bundle"
+                                Height="35"
+                                Width="125"
+                                HorizontalAlignment="Center"
+                                Click="DeleteButton_Click"
+                                materialDesign:ButtonAssist.CornerRadius="15" />
+                        <Button x:Name="TargetButton"
+                                Style="{StaticResource MaterialDesignOutlinedDarkButton}"
+                                Content="Target Bundle"
+                                Height="35"
+                                Width="125"
+                                HorizontalAlignment="Right"
+                                Click="TargetButton_Click"
+                                materialDesign:ButtonAssist.CornerRadius="15" />
+                    </StackPanel>
+                    <StackPanel x:Name="LeftButtonPanel2"
+                                Height="35"
+                                Width="150"
+                                HorizontalAlignment="Right">
+                        <Button x:Name="ApplyButton"
+                                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                                Background="#0077D0"
+                                Content="Apply Bundle"
+                                Height="35"
+                                Width="150"
+                                HorizontalAlignment="Right"
+                                Click="ApplyButton_Click"
+                                IsEnabled="False"
+                                materialDesign:ButtonAssist.CornerRadius="15" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="3"
+                        Grid.Column="7"
+                        Grid.ColumnSpan="7"
+                        Grid.RowSpan="11"
+                        Margin="5,0,10,5">
+                <StackPanel x:Name="AppliedPanel"
+                            Margin="0,0,0,5"
+                            Background="#ededed">
+                    <ListView x:Name="AppliedList"
+                              Height="423">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name"
+                                                Width="200"
+                                                DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Target"
+                                                Width="1000"
+                                                DisplayMemberBinding="{Binding TargetFile}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+                <StackPanel x:Name="RightButtonPanel"
+                            Height="35"
+                            Width="180"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <Button x:Name="DeleteAppliedButton"
+                            Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                            Background="#0077D0"
+                            Content="Restore Applied Bundle"
+                            Height="35"
+                            Width="180"
+                            HorizontalAlignment="Center"
+                            Click="DeleteAppliedButton_Click"
+                            IsEnabled="False"
+                            materialDesign:ButtonAssist.CornerRadius="15" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </materialDesign:Card>
+
+
+</Window>
