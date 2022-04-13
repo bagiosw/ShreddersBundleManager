@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:ShreddersBundleManager"
         mc:Ignorable="d"
         Title="BundleManager"
-        Height="600"
-        Width="1200"
+        Height="635"
+        Width="1230"
         Background="{x:Null}"
         AllowsTransparency="True"
         WindowStyle="None"
@@ -19,7 +19,8 @@
                          Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                          Padding="0"
                          UniformCornerRadius="10"
-                         Margin="5">
+                         Margin="20"
+                         materialDesign:ShadowAssist.ShadowDepth="Depth4">
 
         <Grid>
             <Grid.RowDefinitions>
