@@ -50,4 +50,4 @@ git clone https://github.com/bagiosw/ShreddersBundleManager
 - Debug the project.
 
 ## Screenshots
-![ShreddersBundleManager](https://i.imgur.com/GI0VOmP.png)
+![ShreddersBundleManager](https://i.imgur.com/J9RZHBh.png)
