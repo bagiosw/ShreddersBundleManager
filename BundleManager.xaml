@@ -239,7 +239,6 @@
                                 Orientation="Horizontal">
                         <Button x:Name="ImportButton"
                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                                Background="#0077D0"
                                 Margin="0,0,3,0"
                                 Content="Import Bundle"
                                 Height="35"
@@ -273,7 +272,6 @@
                                 HorizontalAlignment="Right">
                         <Button x:Name="ApplyButton"
                                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                                Background="#0077D0"
                                 Content="Apply Bundle"
                                 Height="35"
                                 Width="150"
@@ -313,7 +311,6 @@
                             HorizontalAlignment="Right">
                     <Button x:Name="DeleteAppliedButton"
                             Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                            Background="#0077D0"
                             Content="Restore Applied Bundle"
                             Height="35"
                             Width="180"
