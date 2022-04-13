@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 
-namespace ShreddersModManager
+namespace ShreddersBundleManager
 {
     /// <summary>
     /// Interaction logic for About.xaml

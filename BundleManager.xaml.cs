@@ -11,12 +11,12 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace ShreddersModManager
+namespace ShreddersBundleManager
 {
     /// <summary>
-    /// Interaction logic for ModManager.xaml
+    /// Interaction logic for BundleManager.xaml
     /// </summary>
-    public partial class ModManager : Window
+    public partial class BundleManager : Window
     {
         public string shreddersDir = Properties.Settings.Default.GameDir;
         public string uabeaDir = Properties.Settings.Default.UabeaDir;
@@ -25,10 +25,10 @@ namespace ShreddersModManager
         ObservableCollection<AppliedBundle> observableApplied = new ObservableCollection<AppliedBundle>();
 
 
-        public ModManager()
+        public BundleManager()
         {
             InitializeComponent();
-            AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | ShreddersModManager launched. Application version " + appVersion);
+            AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | ShreddersBundleManager launched. Application version " + appVersion);
             AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | Loading configuration..");
             ReadImportedJson();
             ReadAppliedJson();
@@ -44,7 +44,7 @@ namespace ShreddersModManager
             }
             else
             {
-                MessageBox.Show("Shredders directory not defined. Please define it from \n'Mod Manager -> Shredders Folder'", "Game Directory Not Defined", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Shredders directory not defined. Please define it from \n'Bundle Manager -> Shredders Folder'", "Game Directory Not Defined", MessageBoxButton.OK, MessageBoxImage.Warning);
                 AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | WARNING | Game directory not defined.");
             }
         }
@@ -375,7 +375,7 @@ namespace ShreddersModManager
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Task.Delay(1000).Wait();
-            AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | ShreddersModManager Exited.\n.\n.\n.");
+            AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | ShreddersBundleManager Exited.\n.\n.\n.");
             Application.Current.Shutdown();
         }
 
@@ -428,7 +428,7 @@ namespace ShreddersModManager
                 else
                 {
                     MessageBox.Show("Wrong directory, please choose proper directory.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    ShredderDirText.Text = "Shredders directory not defined. Please define it from 'Mod Manager -> Shredders Folder'";
+                    ShredderDirText.Text = "Shredders directory not defined. Please define it from 'Bundle Manager -> Shredders Folder'";
                 }
             }
         }
@@ -456,7 +456,7 @@ namespace ShreddersModManager
 
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
-            AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | ShreddersModManager Exited.\n.\n.\n.");
+            AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | ShreddersBundleManager Exited.\n.\n.\n.");
             Task.Delay(1000).Wait();
             Application.Current.Shutdown();
         }
@@ -525,7 +525,7 @@ namespace ShreddersModManager
         {
             if (Properties.Settings.Default.UabeaDir == string.Empty)
             {
-                MessageBox.Show("UABEA directory not defined. Please define it from \n'Mod Manager -> UABEA Folder'", "UABEA Directory Not Defined", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("UABEA directory not defined. Please define it from \n'Bundle Manager -> UABEA Folder'", "UABEA Directory Not Defined", MessageBoxButton.OK, MessageBoxImage.Warning);
                 AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | WARNING | Unable to launch UABEA with undefined directory.");
             }
             else
@@ -550,7 +550,7 @@ namespace ShreddersModManager
         {
             string logFolder = @".\Logs\";
             string logFormat = DateTime.Now.ToString("dd-MM-yyyy");
-            string logName = "ShreddersModManager Log" + logFormat + ".log";
+            string logName = "ShreddersBundleManager Log" + logFormat + ".log";
 
             if (Directory.Exists(logFolder))
             {
