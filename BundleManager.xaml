@@ -85,6 +85,7 @@
                     Background="{StaticResource icon}">
             </Button>-->
                     <TextBlock Text="Shredders Bundle Manager v1.0.0"
+                               x:Name="AppTitle"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"
                                Foreground="White"

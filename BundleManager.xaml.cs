@@ -32,6 +32,7 @@ namespace ShreddersBundleManager
             AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | Loading configuration..");
             ReadImportedJson();
             ReadAppliedJson();
+            AppTitle.Text = "Shredders Bundle Manager v" + appVersion;
             if (Properties.Settings.Default.GameDir != string.Empty)
             {
                 AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | WARNING | Game directory defined.");
@@ -226,7 +227,7 @@ namespace ShreddersBundleManager
                     Debug.WriteLine("obs : " + observableImported.Count);
                     Debug.WriteLine("list : " + ImportedList.Items.Count);
                     WriteImportedJson();
-                    MessageBox.Show("The " + filename + " has been imported. Don't forget to select the target bundle.", "Import Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(filename + " has been imported. Don't forget to select the target bundle.", "Import Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     AppendLog(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") + " | INFO | New bundle imported from" + filepath);
                 }
                 else
@@ -417,6 +418,7 @@ namespace ShreddersBundleManager
                 {
                     shreddersDir = shreddersDirTemp;
                     ShredderDirText.Text = "Shredders Dir : " + shreddersDir;
+                    ImportButtonMenu.IsEnabled = true;
                     ImportButton.IsEnabled = true;
                     ApplyButton.IsEnabled = true;
                     DeleteAppliedButton.IsEnabled = true;
