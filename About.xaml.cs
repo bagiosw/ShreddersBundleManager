@@ -14,7 +14,7 @@ namespace ShreddersBundleManager
         public About()
         {
             InitializeComponent();
-            AppVersion.Text = "Version " + appVersion;
+            Version.Text = "Version " + appVersion;
         }
 
 
@@ -26,6 +26,15 @@ namespace ShreddersBundleManager
         private void CustomDraggable_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void GithubButton_Click(object sender, RoutedEventArgs e)
+        {
+            var uri = "https://github.com/bagiosw/ShreddersBundleManager";
+            var psi = new ProcessStartInfo();
+            psi.UseShellExecute = true;
+            psi.FileName = uri;
+            Process.Start(psi);
         }
     }
 }

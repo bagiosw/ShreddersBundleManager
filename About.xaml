@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="About"
         Height="250"
-        Width="430"
+        Width="460"
         Background="{x:Null}"
         AllowsTransparency="True"
         WindowStyle="None"
@@ -57,10 +57,11 @@
                            FontFamily="segoe ui"
                            FontWeight="Normal"
                            Margin="0,0,0,0" />
-                <TextBlock x:Name="AppVersion"
+                <TextBlock x:Name="Version"
+                           Text="Version"
                            Grid.RowSpan="2"
-                           Grid.Column="2"
-                           Grid.ColumnSpan="3"
+                           Grid.Column="6"
+                           Grid.ColumnSpan="6"
                            Foreground="#606060"
                            FontSize="14"
                            FontFamily="segoe ui"
@@ -76,14 +77,42 @@
                            FontFamily="segoe ui"
                            FontWeight="Light"
                            Margin="0,0,0,15" />
-                <TextBlock Text="Made by BagioSW"
-                           Grid.RowSpan="2"
-                           Grid.Column="2"
-                           Grid.ColumnSpan="3"
-                           Foreground="#1F1F1F"
-                           FontSize="14"
-                           FontFamily="segoe ui"
-                           FontWeight="Normal" />
+                <StackPanel Orientation="Horizontal"
+                            Height="25">
+                    <TextBlock Text="Made by BagioSW"
+                               Grid.RowSpan="2"
+                               Grid.Column="2"
+                               Grid.ColumnSpan="3"
+                               Foreground="#1F1F1F"
+                               FontSize="14"
+                               FontFamily="segoe ui"
+                               FontWeight="Normal"
+                               VerticalAlignment="Center" />
+                    <StackPanel HorizontalAlignment="Right">
+                        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Height="25"
+                                Width="80"
+                                materialDesign:ButtonAssist.CornerRadius="10"
+                                ToolTip="SBM on Github"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                Grid.Column="3"
+                                Margin="10,0,0,0"
+                                FontSize="10"
+                                VerticalContentAlignment="Center"
+                                Click="GithubButton_Click">
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Top">
+                                <materialDesign:PackIcon Kind="Github"
+                                                         VerticalAlignment="Center" />
+                                <TextBlock Text="Github"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+
+                </StackPanel>
+
             </StackPanel>
 
 
