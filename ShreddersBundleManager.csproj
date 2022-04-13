@@ -9,6 +9,7 @@
 		<StartupObject></StartupObject>
 		<ApplicationIcon>Images\app.ico</ApplicationIcon>
 		<RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 
 	<ItemGroup>
