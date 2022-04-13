@@ -1,8 +1,8 @@
-﻿<Application x:Class="ShreddersModManager.App"
+﻿<Application x:Class="ShreddersBundleManager.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ShreddersModManager"
-             StartupUri="ModManager.xaml">
+             xmlns:local="clr-namespace:ShreddersBundleManager"
+             StartupUri="BundleManager.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

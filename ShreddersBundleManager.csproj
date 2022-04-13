@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<LangVersion>9.0</LangVersion>
-		<StartupObject>ShreddersModManager.App</StartupObject>
+		<StartupObject></StartupObject>
 		<ApplicationIcon>Images\app.ico</ApplicationIcon>
 		<RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
 	</PropertyGroup>
