@@ -11,7 +11,7 @@ With Shredders Bundle Manager, after you import your custom bundle and choose th
 No need to worry about backing up, renaming, and copy-paste the bundles.
 
 ## Installation Instruction
-1. Download the release build Shredders Bundle Manager from the Release page (Coming soon).
+1. Download the release build Shredders Bundle Manager from the Release page.
 2. Extract the files using [WinRAR](https://www.win-rar.com/) or [WinZIP](https://www.winzip.com/).
 3. Open the `ShreddersBundleManager.exe`
 
